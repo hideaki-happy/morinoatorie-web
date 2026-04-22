@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 森のアトリエ</title>
+  <meta name="description" content="森のアトリエへのお問い合わせはこちらから。作品購入・オーダーメイド・その他のご質問をお気軽にどうぞ。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">🌿 森のアトリエ</a>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+          <li><a href="contact.html" class="active">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ページヒーロー -->
+    <section class="page-hero">
+      <h1>お問い合わせ</h1>
+      <p>ご購入・オーダーメイド・その他のご質問は、こちらのフォームよりお気軽にどうぞ。</p>
+    </section>
+
+    <!-- お問い合わせセクション -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-wrapper">
+
+          <p class="contact-intro">
+            お問い合わせいただいた内容には、<strong>3営業日以内</strong>にご返信いたします。<br>
+            お急ぎの場合は、その旨をメッセージにご記載ください。
+          </p>
+
+          <form class="contact-form" id="contact-form" novalidate>
+
+            <!-- お名前 -->
+            <div class="form-group">
+              <label for="name">
+                お名前
+                <span class="required">※必須</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="例：山田 太郎"
+                required
+                autocomplete="name"
+              >
+            </div>
+
+            <!-- メールアドレス -->
+            <div class="form-group">
+              <label for="email">
+                メールアドレス
+                <span class="required">※必須</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="例：example@email.com"
+                required
+                autocomplete="email"
+              >
+            </div>
+
+            <!-- お問い合わせの種別 -->
+            <div class="form-group">
+              <label for="category">お問い合わせの種別</label>
+              <select id="category" name="category">
+                <option value="">-- 選択してください --</option>
+                <option value="purchase">作品のご購入について</option>
+                <option value="order">オーダーメイドのご依頼</option>
+                <option value="data">デジタルデータについて</option>
+                <option value="print">印刷物について</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+
+            <!-- お問い合わせ内容 -->
+            <div class="form-group">
+              <label for="message">
+                お問い合わせ内容
+                <span class="required">※必須</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="ご質問・ご要望の内容をできるだけ詳しくお書きください。&#10;&#10;（例）ギャラリーの「朝霧の森」をA3印刷で購入したいと思っています。お支払い方法について教えていただけますか？"
+                required
+              ></textarea>
+              <p class="form-note">※ オーダーメイドのご依頼の場合は、ご希望のテーマ・色味・サイズなどもご記載いただけると助かります。</p>
+            </div>
+
+            <!-- 送信ボタン -->
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">送信する</button>
+            </div>
+
+          </form>
+
+          <!-- 送信完了メッセージ（非表示） -->
+          <div id="form-success" style="display:none; margin-top:2rem; padding:1.5rem; background:var(--color-green-pale); border:1px solid var(--color-green-light); border-radius:var(--radius); text-align:center;">
+            <p style="color:var(--color-green-dark); font-weight:700; font-size:1.05rem;">✅ お問い合わせを受け付けました</p>
+            <p style="color:var(--color-text-sub); font-size:0.9rem; margin-top:0.5rem;">3営業日以内にご返信いたします。しばらくお待ちください。</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <p>&copy; 2026 森のアトリエ All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    /* スマホ用ハンバーガーメニュー */
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('is-open');
+    });
+
+    /* フォームのバリデーションと送信デモ */
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name    = form.name.value.trim();
+      const email   = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        alert('※ お名前・メールアドレス・お問い合わせ内容は必須項目です。');
+        return;
+      }
+
+      /* 実際の送信処理はバックエンドと連携してください */
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+
+</body>
+</html>
