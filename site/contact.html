@@ -9,10 +9,13 @@
 </head>
 <body>
 
+  <!-- スクロール進捗バー -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- ヘッダー -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-logo">🌿 森のアトリエ</a>
+      <a href="index.html" class="site-logo">森のアトリエ</a>
       <nav class="site-nav" id="site-nav">
         <ul>
           <li><a href="index.html">トップ</a></li>
@@ -132,6 +135,7 @@
     <p>&copy; 2026 森のアトリエ All Rights Reserved.</p>
   </footer>
 
+  <script src="js/transitions.js"></script>
   <script>
     /* スマホ用ハンバーガーメニュー */
     const toggle = document.getElementById('nav-toggle');

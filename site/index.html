@@ -9,10 +9,13 @@
 </head>
 <body>
 
+  <!-- スクロール進捗バー -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- ヘッダー -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-logo">🌿 森のアトリエ</a>
+      <a href="index.html" class="site-logo">森のアトリエ</a>
       <nav class="site-nav" id="site-nav">
         <ul>
           <li><a href="index.html" class="active">トップ</a></li>
@@ -52,17 +55,17 @@
         </p>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">🎨</div>
+            <div class="feature-icon"></div>
             <h3>AIが描くオリジナル作品</h3>
             <p>最新のAI生成技術を活用し、森・植物・光など自然モチーフのアート作品を制作しています。同じ作品は二度と生まれません。</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🖼️</div>
+            <div class="feature-icon"></div>
             <h3>高品質な印刷・データ販売</h3>
             <p>A3サイズの高解像度印刷物と、デジタルデータの両方をご用意しています。インテリアとしても、デジタル壁紙としてもお使いいただけます。</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">✉️</div>
+            <div class="feature-icon"></div>
             <h3>オーダーメイド対応</h3>
             <p>「こんな雰囲気の作品が欲しい」というご要望にお応えします。色味・テーマ・サイズなどをご相談いただきながら制作いたします。</p>
           </div>
@@ -100,17 +103,17 @@
         <div class="section-divider"></div>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">🔍</div>
+            <div class="feature-icon"></div>
             <h3>① 作品を選ぶ</h3>
             <p>ギャラリーから気に入った作品をお選びください。各作品には詳細な説明と価格を記載しています。</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📩</div>
+            <div class="feature-icon"></div>
             <h3>② お問い合わせ</h3>
             <p>作品番号と希望の形式（印刷物 / デジタルデータ）をお知らせください。3営業日以内にご返信いたします。</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📦</div>
+            <div class="feature-icon"></div>
             <h3>③ お届け</h3>
             <p>お支払い確認後、印刷物は1週間前後でお届け。デジタルデータはメールで即日ご案内します。</p>
           </div>
@@ -143,6 +146,7 @@
       nav.classList.toggle('is-open');
     });
   </script>
+  <script src="js/transitions.js"></script>
 
 </body>
 </html>
