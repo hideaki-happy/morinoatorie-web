@@ -253,7 +253,7 @@ const SceneLaunch: React.FC = () => {
       <Terminal
         prompt="$"
         command="claude"
-        output="✻ Welcome to Claude Code!\n  プロジェクトの準備ができました。"
+        output={"✻ Welcome to Claude Code!\n  プロジェクトの準備ができました。"}
         typeStartFrame={10}
       />
     </AbsoluteFill>
@@ -274,7 +274,7 @@ const ScenePrompt: React.FC = () => {
       <Terminal
         prompt=">"
         command="トップページにヒーロー画像を追加してください"
-        output="📝 site/index.html を編集しました\n🎨 style.css にスタイルを追加しました"
+        output={"📝 site/index.html を編集しました\n🎨 style.css にスタイルを追加しました"}
         typeStartFrame={10}
       />
     </AbsoluteFill>
