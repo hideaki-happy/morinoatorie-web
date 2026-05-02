@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サンプル動画プレビュー | 森のアトリエ</title>
+  <meta name="description" content="Remotion で制作した Claude Code の使い方サンプル動画（15秒）のプレビューページです。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* このページ専用のレイアウト */
+    .video-page {
+      padding: 80px 20px;
+      min-height: 70vh;
+      background-color: var(--color-bg, #f7f4ed);
+    }
+    .video-container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #0f1f17;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    }
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .video-meta {
+      margin-top: 24px;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .video-meta dl {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 8px 16px;
+      margin: 16px 0 0;
+    }
+    .video-meta dt {
+      color: #2d6a4f;
+      font-weight: 600;
+    }
+    .video-meta dd {
+      margin: 0;
+    }
+    .video-actions {
+      margin-top: 32px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">森のアトリエ</a>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="gallery.html">ギャラリー</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="video-page">
+      <div class="video-container">
+        <h1 class="section-title">サンプル動画プレビュー</h1>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">
+          Remotion で制作した「Claude Code の使い方」紹介動画（15秒）です。
+        </p>
+
+        <div class="video-frame">
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            poster=""
+            aria-label="Claude Code の使い方サンプル動画"
+          >
+            <source src="videos/claude-code-intro.mp4" type="video/mp4">
+            お使いのブラウザは動画再生に対応していません。
+            <a href="videos/claude-code-intro.mp4">こちらから動画をダウンロード</a>してください。
+          </video>
+        </div>
+
+        <div class="video-meta">
+          <dl>
+            <dt>制作ツール</dt>
+            <dd>Remotion（React で動画を構築するフレームワーク）</dd>
+            <dt>解像度</dt>
+            <dd>1920 × 1080（FullHD）</dd>
+            <dt>長さ・FPS</dt>
+            <dd>15秒・30fps</dd>
+            <dt>ファイルサイズ</dt>
+            <dd>約 1.2MB（H.264 / mp4）</dd>
+          </dl>
+        </div>
+
+        <div class="video-actions">
+          <a href="videos/claude-code-intro.mp4" download class="btn btn-outline">
+            動画をダウンロード
+          </a>
+          <a href="index.html" class="btn btn-primary">トップへ戻る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <p>&copy; 2026 森のアトリエ All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    /* スマホ用ハンバーガーメニュー */
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('is-open');
+    });
+  </script>
+
+</body>
+</html>
